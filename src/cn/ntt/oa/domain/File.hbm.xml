@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="cn.ntt.oa.domain">
+
+	<class name="File" table="ntt_file">
+		<id name="id">
+            <generator class="native"/>
+		</id>
+		<property name="name" />
+		<property name="size" />
+		<property name="action" />
+		<property name="downLoadNum" />
+		<property name="createTime" type="timestamp" />
+		<property name="format" />
+		<property name="description"/>
+			
+	   <!-- folder属性    本类与Folder类的关联关系为多对一 -->
+	  <many-to-one name="folder" class="Folder" column="folderId"></many-to-one>
+	   
+	</class>
+	 
+		
+</hibernate-mapping>

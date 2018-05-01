@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="cn.ntt.oa.domain">
+
+	<class name="Card" table="ntt_card">
+		<id name="id">
+            <generator class="native"/>
+		</id>
+		<property name="address" />		
+		<property name="company" />
+		<property name="createDate" type="timestamp" />
+		<property name="departmentName" />
+		<property name="description" />
+		<property name="email" />
+		<property name="englishName" />
+		<property name="name" />	
+		<property name="nickName" />	
+		<property name="QQ" />	
+		<property name="telBusiness" />	
+		<property name="telHome" />	
+		<property name="vocation" />	
+		<property name="zipCode" />	
+	   <!-- cardcase属性    本类与Cardcase类的关联关系为多对一 -->
+	  <many-to-one name="cardcase" class="Cardcase" column="cardcaseId"></many-to-one>
+	   
+	</class>
+	 
+		
+</hibernate-mapping>

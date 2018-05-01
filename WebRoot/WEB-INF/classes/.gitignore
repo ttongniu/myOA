@@ -1,0 +1,9 @@
+/META-INF
+/applicationContext.xml
+/cn
+/hibernate.cfg.xml
+/jbpm.cfg.xml
+/jdbc.properties
+/log4j.properties
+/org
+/struts.xml

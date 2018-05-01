@@ -1,0 +1,53 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+<session-factory>
+
+	<!-- 1，数据库连接信息 -->
+	<property name="dialect">
+		org.hibernate.dialect.MySQL5InnoDBDialect
+	</property>
+	<!-- 
+		<property name="connection.url">jdbc:mysql:///oa</property>
+		<property name="connection.driver_class">com.jdbc.mysql.Driver</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password">root</property>
+	-->
+
+	<!-- 2，其他配置 -->
+	<property name="show_sql">true</property>
+	<property name="hbm2ddl.auto">update</property>
+
+	<!-- 导入JBPM4.4的映射文件 -->
+	<mapping resource="jbpm.repository.hbm.xml" />
+	<mapping resource="jbpm.execution.hbm.xml" />
+	<mapping resource="jbpm.history.hbm.xml" />
+	<mapping resource="jbpm.task.hbm.xml" />
+	<mapping resource="jbpm.identity.hbm.xml" />
+
+
+	<!-- 3，导入映射文件 -->
+	<mapping resource="cn/ntt/oa/domain/User.hbm.xml" />
+	<mapping resource="cn/ntt/oa/domain/Role.hbm.xml" />
+	<mapping resource="cn/ntt/oa/domain/Department.hbm.xml" />
+	<mapping resource="cn/ntt/oa/domain/Privilege.hbm.xml" />
+	<mapping resource="cn/ntt/oa/domain/Forum.hbm.xml" />
+	<mapping resource="cn/ntt/oa/domain/Reply.hbm.xml" />
+	<mapping resource="cn/ntt/oa/domain/Topic.hbm.xml" />
+	<mapping resource="cn/ntt/oa/domain/AddressBook.hbm.xml" />
+	<mapping resource="cn/ntt/oa/domain/Card.hbm.xml" />
+	<mapping resource="cn/ntt/oa/domain/Cardcase.hbm.xml" />
+	<mapping resource="cn/ntt/oa/domain/File.hbm.xml" />
+	<mapping resource="cn/ntt/oa/domain/Folder.hbm.xml" />
+	<mapping resource="cn/ntt/oa/domain/ApplicationTemplate.hbm.xml" />
+	<mapping resource="cn/ntt/oa/domain/ApproveInfo.hbm.xml" />
+	<mapping resource="cn/ntt/oa/domain/Application.hbm.xml" />
+	<mapping resource="cn/ntt/oa/domain/Schedule.hbm.xml" />
+
+
+</session-factory>
+
+</hibernate-configuration>

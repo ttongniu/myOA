@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="cn.ntt.oa.domain">
+
+	<class name="Folder" table="ntt_folder">
+		<id name="id">
+            <generator class="native"/>
+		</id>
+		<property name="name" />
+		<property name="description" />
+		<property name="type" />
+		<property name="createTime" type="timestamp" />
+				
+	   <!-- user属性    本类与User类的关联关系为多对一 -->
+	  <many-to-one name="user" class="User" column="userId"></many-to-one>
+	   <!--files属性   本类与File类的关联关系为一对多 -->
+	   <set name="files" cascade="delete">
+	   <key column="folderId"/>
+	   <one-to-many class="File"/>
+	   </set>
+	   
+	</class>
+	 
+		
+</hibernate-mapping>

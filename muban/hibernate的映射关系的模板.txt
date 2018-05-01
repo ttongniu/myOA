@@ -1,0 +1,27 @@
+<!-- users属性，本类与User的一对多 -->
+格式：？属性，本类与？的？
+?1	属性名
+?2	关联对类型
+?3	关系
+
+	多对一：
+		<many-to-one name="" class="" column=""></many-to-one>
+	一对多（Set）：
+		<set name="">
+			<key column=""></key>
+			<one-to-many class=""/>
+		</set>
+	多对多（Set）：
+		<set name="" table="">
+			<key column=""></key>
+			<many-to-many class="" column=""></many-to-many>
+		</set>
+	一对一
+	<!-- lastTopic属性，本类与Topic的一对一。
+			采用基于外键的一对一映射方式，本方有外键。 -->		
+		<many-to-one name="lastTopic" class="Topic" column="lastTopicId" unique="true"></many-to-one>
+		
+		
+		
+		
+		

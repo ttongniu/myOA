@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="cn.ntt.oa.domain">
+
+	<class name="AddressBook" table="ntt_addressBook">
+		<id name="id">
+            <generator class="native"/>
+		</id>
+		<property name="name" />
+		<property name="gender" />
+		<property name="phoneNumber" />
+		<property name="email" />
+		<property name="description" />
+		<property name="address" />
+		<property name="QQ" />		
+	   <!-- department属性    本类与Department类的关联关系为多对一 -->
+	  <many-to-one name="department" class="Department" column="departmentId"></many-to-one>
+	   
+	</class>
+	 
+		
+</hibernate-mapping>
